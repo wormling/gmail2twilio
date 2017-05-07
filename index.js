@@ -32,8 +32,8 @@ mailListener.on("error", function(err){
 mailListener.on("mail", function(mail){
     client.messages.create({
         body: mail.subject + ' ' + mail.text,
-        to: config.twilioFromNumber, // Text this number
-        from: config.twilioToNumber  // From a valid Twilio number
+        to: config.twilioToNumber, // Text this number
+        from: config.twilioFromNumber  // From a valid Twilio number
     }, function(err, message) {
         console.log(err, message);
     });
